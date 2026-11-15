@@ -1,0 +1,2 @@
+Copy the Kaggle LinkedIn Job Postings CSV (e.g. postings.csv) into this folder.
+Then run:  python inspect_dataset.py

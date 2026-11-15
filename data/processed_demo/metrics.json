@@ -1,0 +1,524 @@
+{
+  "role_classifier": {
+    "task": "role_family_classification",
+    "status": "ok",
+    "limitations": [
+      "Labels come from title keyword rules, so the model learns to reproduce those rules from descriptions.",
+      "Descriptions often mention the job title, so accuracy can be optimistic; the title column is not used as a feature.",
+      "Only postings whose title matched a tech role family are used; 'Other' titles are excluded."
+    ],
+    "dropped_classes": {},
+    "best_model": "Logistic Regression",
+    "classes": [
+      "Cybersecurity Specialist",
+      "Data Analyst / BI",
+      "Data Engineer",
+      "Data Scientist",
+      "DevOps / Cloud Engineer",
+      "Frontend / Full-Stack Developer",
+      "Machine Learning / AI Engineer",
+      "Mobile Developer",
+      "QA / Test Engineer",
+      "Software Engineer (General/Backend)"
+    ],
+    "n_train": 3970,
+    "n_test": 993,
+    "class_counts": {
+      "Frontend / Full-Stack Developer": 515,
+      "Data Analyst / BI": 513,
+      "QA / Test Engineer": 511,
+      "Mobile Developer": 502,
+      "Cybersecurity Specialist": 502,
+      "Data Scientist": 495,
+      "Machine Learning / AI Engineer": 490,
+      "Data Engineer": 484,
+      "Software Engineer (General/Backend)": 479,
+      "DevOps / Cloud Engineer": 472
+    },
+    "cv_results": [
+      {
+        "model": "Baseline (most frequent)",
+        "cv_macro_f1": 0.01880416518311689,
+        "cv_std": 5.238515091525548e-05,
+        "seconds": 0.0,
+        "error": null
+      },
+      {
+        "model": "Logistic Regression",
+        "cv_macro_f1": 0.9815184756292,
+        "cv_std": 0.0017895737500259145,
+        "seconds": 0.4,
+        "error": null
+      },
+      {
+        "model": "Linear SVM",
+        "cv_macro_f1": 0.9812338490244651,
+        "cv_std": 0.003362564743109916,
+        "seconds": 0.4,
+        "error": null
+      },
+      {
+        "model": "Random Forest",
+        "cv_macro_f1": 0.9680896293974252,
+        "cv_std": 0.005643776302865317,
+        "seconds": 2.9,
+        "error": null
+      }
+    ],
+    "cv_folds": 3,
+    "cv_rows_used": 3970,
+    "test_accuracy": 0.9889224572004028,
+    "test_macro_f1": 0.9888504987604833,
+    "test_weighted_f1": 0.9889275730504419,
+    "baseline_accuracy": 0.10372608257804633,
+    "baseline_macro_f1": 0.018795620437956205,
+    "per_class_report": {
+      "Cybersecurity Specialist": {
+        "precision": 1.0,
+        "recall": 0.9900990099009901,
+        "f1-score": 0.9950248756218906,
+        "support": 101.0
+      },
+      "Data Analyst / BI": {
+        "precision": 0.9900990099009901,
+        "recall": 0.970873786407767,
+        "f1-score": 0.9803921568627451,
+        "support": 103.0
+      },
+      "Data Engineer": {
+        "precision": 0.9795918367346939,
+        "recall": 0.9896907216494846,
+        "f1-score": 0.9846153846153847,
+        "support": 97.0
+      },
+      "Data Scientist": {
+        "precision": 0.97,
+        "recall": 0.9797979797979798,
+        "f1-score": 0.9748743718592965,
+        "support": 99.0
+      },
+      "DevOps / Cloud Engineer": {
+        "precision": 1.0,
+        "recall": 0.9787234042553191,
+        "f1-score": 0.989247311827957,
+        "support": 94.0
+      },
+      "Frontend / Full-Stack Developer": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 103.0
+      },
+      "Machine Learning / AI Engineer": {
+        "precision": 0.9897959183673469,
+        "recall": 0.9897959183673469,
+        "f1-score": 0.9897959183673469,
+        "support": 98.0
+      },
+      "Mobile Developer": {
+        "precision": 0.9803921568627451,
+        "recall": 1.0,
+        "f1-score": 0.9900990099009901,
+        "support": 100.0
+      },
+      "QA / Test Engineer": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 102.0
+      },
+      "Software Engineer (General/Backend)": {
+        "precision": 0.979381443298969,
+        "recall": 0.9895833333333334,
+        "f1-score": 0.9844559585492227,
+        "support": 96.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        100,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        96,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        97,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        92,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        103,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        97,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        102,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        95
+      ]
+    ],
+    "top_features": {
+      "Cybersecurity Specialist": [
+        "skill: Cybersecurity",
+        "skill: Penetration Testing",
+        "skill: Networking",
+        "skill: Encryption",
+        "skill: SIEM",
+        "skill: Linux",
+        "skill: IAM",
+        "skill: Network Security",
+        "cybersecurity",
+        "skill: LLMs",
+        "cybersecurity analyst",
+        "experience penetration"
+      ],
+      "Data Analyst / BI": [
+        "skill: Tableau",
+        "skill: Business Intelligence",
+        "skill: Power BI",
+        "skill: Data Visualization",
+        "skill: Excel",
+        "data analyst",
+        "skill: Statistics",
+        "skill: SQL",
+        "analyst requirements",
+        "analyst",
+        "skill: System Design",
+        "skill: Python"
+      ],
+      "Data Engineer": [
+        "skill: Hadoop",
+        "skill: Snowflake",
+        "skill: Airflow",
+        "skill: Kafka",
+        "skill: Spark",
+        "skill: ETL",
+        "skill: Data Warehousing",
+        "skill: AWS",
+        "skill: Databricks",
+        "skill: SQL",
+        "data engineer",
+        "skill: Python"
+      ],
+      "Data Scientist": [
+        "skill: Pandas",
+        "skill: A/B Testing",
+        "skill: NumPy",
+        "skill: scikit-learn",
+        "skill: Machine Learning",
+        "skill: Statistics",
+        "skill: Data Visualization",
+        "data scientist",
+        "scientist requirements",
+        "scientist",
+        "skill: SQL",
+        "skill: LLMs"
+      ],
+      "DevOps / Cloud Engineer": [
+        "skill: Bash/Shell",
+        "skill: Jenkins",
+        "skill: Ansible",
+        "skill: Kubernetes",
+        "skill: CI/CD",
+        "skill: Terraform",
+        "skill: Docker",
+        "skill: Linux",
+        "skill: Git",
+        "skill: AWS",
+        "devops engineer",
+        "devops"
+      ],
+      "Frontend / Full-Stack Developer": [
+        "skill: JavaScript",
+        "skill: Angular",
+        "skill: jQuery",
+        "skill: TypeScript",
+        "skill: React",
+        "skill: Redux",
+        "skill: CSS",
+        "skill: HTML",
+        "skill: AngularJS",
+        "skill: Git",
+        "frontend",
+        "frontend developer"
+      ],
+      "Machine Learning / AI Engineer": [
+        "skill: NLP",
+        "skill: TensorFlow",
+        "skill: Machine Learning",
+        "skill: MLOps",
+        "skill: Deep Learning",
+        "skill: PyTorch",
+        "skill: Model Deployment",
+        "skill: Docker",
+        "skill: LangChain",
+        "skill: AWS",
+        "skill: LLMs",
+        "skill: Python"
+      ],
+      "Mobile Developer": [
+        "skill: iOS",
+        "skill: Swift",
+        "skill: Kotlin",
+        "skill: React Native",
+        "skill: Android",
+        "skill: Flutter",
+        "mobile developer",
+        "mobile",
+        "skill: Git",
+        "developer",
+        "developer requirements",
+        "senior mobile"
+      ],
+      "QA / Test Engineer": [
+        "skill: JIRA",
+        "skill: Unit Testing",
+        "skill: Selenium",
+        "skill: Test Automation",
+        "skill: Java",
+        "skill: CI/CD",
+        "automation",
+        "qa",
+        "automation engineer",
+        "qa automation",
+        "skill: SVN",
+        "skill: Python"
+      ],
+      "Software Engineer (General/Backend)": [
+        "skill: Java",
+        "skill: REST APIs",
+        "skill: Data Structures & Algorithms",
+        "skill: Microservices",
+        "skill: AWS",
+        "skill: Docker",
+        "skill: Agile",
+        "skill: Prompt Engineering",
+        "skill: SQL",
+        "skill: Git",
+        "skill: Mainframe",
+        "software"
+      ]
+    },
+    "model_path": "C:\\Users\\panch\\Desktop\\Nikita\\skill_gap_project_FINAL\\skill_gap_project\\models\\demo\\role_classifier.joblib",
+    "beats_baseline": true
+  },
+  "salary_model": {
+    "task": "salary_regression",
+    "status": "ok",
+    "limitations": [
+      "Only postings that list salary are used (a self-selected subset).",
+      "Salary is converted to an approximate yearly figure; part-time/hourly conversions are rough.",
+      "Skill-salary relationships are associations, not causal effects.",
+      "Currency is not filtered: figures are labelled USD but the LinkedIn data is assumed to be mostly USD."
+    ],
+    "n_rows_with_salary": 2647,
+    "best_model": "Random Forest",
+    "n_train": 2117,
+    "n_test": 530,
+    "cv_results": [
+      {
+        "model": "Ridge",
+        "cv_mae_log": 0.14344404901357455,
+        "error": null
+      },
+      {
+        "model": "Random Forest",
+        "cv_mae_log": 0.1389989881704117,
+        "error": null
+      }
+    ],
+    "test_metrics": {
+      "mae_usd": 13671.418333492269,
+      "rmse_usd": 18119.85893039389,
+      "r2_log": 0.7940030033336719
+    },
+    "baseline_metrics": {
+      "mae_usd": 31251.049131925873,
+      "rmse_usd": 38649.22003087015,
+      "r2_log": -6.176072603336635e-05
+    },
+    "top_features": [
+      {
+        "feature": "role_Other",
+        "weight": 0.5460867973644495
+      },
+      {
+        "feature": "level_group_junior",
+        "weight": 0.2157762564158373
+      },
+      {
+        "feature": "role_Data Analyst / BI",
+        "weight": 0.06689976786920585
+      },
+      {
+        "feature": "role_QA / Test Engineer",
+        "weight": 0.0371324626671627
+      },
+      {
+        "feature": "role_Frontend / Full-Stack Developer",
+        "weight": 0.015235781583030458
+      },
+      {
+        "feature": "role_Machine Learning / AI Engineer",
+        "weight": 0.012912733084766705
+      },
+      {
+        "feature": "level_group_unknown",
+        "weight": 0.006113492659001967
+      },
+      {
+        "feature": "level_group_senior",
+        "weight": 0.0050716406360080775
+      },
+      {
+        "feature": "role_Cybersecurity Specialist",
+        "weight": 0.003950586928631994
+      },
+      {
+        "feature": "skill: Kubernetes",
+        "weight": 0.0038062948136981913
+      },
+      {
+        "feature": "role_DevOps / Cloud Engineer",
+        "weight": 0.0037602178972337454
+      },
+      {
+        "feature": "skill: HTML",
+        "weight": 0.0036373587468105876
+      },
+      {
+        "feature": "skill: AWS",
+        "weight": 0.0035204118168998214
+      },
+      {
+        "feature": "role_Mobile Developer",
+        "weight": 0.0033862485149791757
+      },
+      {
+        "feature": "skill: Python",
+        "weight": 0.0030991266281782458
+      },
+      {
+        "feature": "skill: MLOps",
+        "weight": 0.0030928316492582334
+      },
+      {
+        "feature": "skill: Git",
+        "weight": 0.002743600073736448
+      },
+      {
+        "feature": "skill: SQL",
+        "weight": 0.0024958932508999635
+      },
+      {
+        "feature": "skill: Terraform",
+        "weight": 0.00227878932858845
+      },
+      {
+        "feature": "skill: CSS",
+        "weight": 0.0021028108668800236
+      }
+    ],
+    "median_salary_usd": 99700.00000000007,
+    "beats_baseline": true
+  }
+}

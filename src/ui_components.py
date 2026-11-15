@@ -1,0 +1,147 @@
+"""Reusable UI pieces: CSS theme, KPI cards, banners, Plotly styling, safe table/figure helpers."""
+from __future__ import annotations
+
+import html
+import traceback
+from typing import List, Optional, Sequence, Tuple
+
+import pandas as pd
+import streamlit as st
+
+from .config import THEME
+
+PURPLES = ["#7C3AED", "#A78BFA", "#C4B5FD", "#5B21B6", "#8B5CF6", "#DDD6FE", "#4C1D95"]
+PURPLE_SCALE = [[0.0, "#131A3A"], [0.35, "#4C1D95"], [0.7, "#7C3AED"], [1.0, "#E9D5FF"]]
+
+CSS = """
+<style>
+.stApp {background: radial-gradient(1200px 600px at 85% -10%, rgba(124,58,237,0.18), transparent 60%), #0B1026;}
+[data-testid="stSidebar"] {background: linear-gradient(180deg,#0E1433 0%,#0B1026 100%); border-right:1px solid rgba(124,58,237,0.25);}
+#MainMenu, footer {visibility:hidden;}
+.block-container {padding-top: 2rem; max-width: 1400px;}
+.page-title {font-size: 2rem; font-weight: 800; letter-spacing:-0.5px;
+  background: linear-gradient(90deg,#FFFFFF,#A78BFA); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+.page-sub {color:#9CA3C7; margin-bottom: 1.1rem;}
+.kpi-card {background: linear-gradient(135deg,#1B2352,#131A3A); border:1px solid rgba(124,58,237,0.35);
+  border-radius:16px; padding:16px 18px; box-shadow:0 6px 24px rgba(0,0,0,0.25); height:100%;}
+.kpi-label {color:#9CA3C7; font-size:0.72rem; text-transform:uppercase; letter-spacing:1px;}
+.kpi-value {font-size:1.7rem; font-weight:800; color:#fff; line-height:1.25;}
+.kpi-sub {color:#A78BFA; font-size:0.78rem;}
+.hero {background: linear-gradient(120deg,rgba(124,58,237,0.35),rgba(19,26,58,0.9)); border:1px solid rgba(167,139,250,0.35);
+  border-radius:20px; padding:26px 30px; margin-bottom:18px;}
+.hero h2 {margin:0 0 6px 0; color:#fff;} .hero p {color:#D6D9F0; margin:0;}
+.banner {padding:10px 16px; border-radius:12px; font-weight:600; margin-bottom:14px; font-size:0.9rem;}
+.banner-real {background:rgba(52,211,153,0.12); border:1px solid #34D399; color:#A7F3D0;}
+.banner-demo {background:rgba(251,191,36,0.12); border:1px solid #FBBF24; color:#FDE68A;}
+.card {background:#131A3A; border:1px solid rgba(124,58,237,0.25); border-radius:14px; padding:16px 18px; height:100%;}
+.card h4 {margin:0 0 6px 0; color:#A78BFA;} .card p, .card li {color:#CBD0EA; font-size:0.9rem;}
+.pill {display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.75rem; font-weight:700; margin-right:6px;}
+.pill-good {background:rgba(52,211,153,0.15); color:#34D399;} .pill-warn {background:rgba(251,191,36,0.15); color:#FBBF24;}
+.pill-bad {background:rgba(248,113,113,0.15); color:#F87171;} .pill-info {background:rgba(167,139,250,0.18); color:#C4B5FD;}
+.step {display:inline-block; background:#131A3A; border:1px solid rgba(124,58,237,0.4); border-radius:10px; padding:8px 12px; margin:3px 2px; color:#E5E7EF; font-size:0.82rem;}
+.arrow {color:#7C3AED; font-weight:800; margin:0 2px;}
+.stButton>button, .stDownloadButton>button {background: linear-gradient(90deg,#7C3AED,#9F67FF); color:#fff; border:0; border-radius:10px; font-weight:600; padding:0.45rem 1.1rem;}
+.stButton>button:hover, .stDownloadButton>button:hover {filter:brightness(1.12); color:#fff;}
+.stTabs [data-baseweb="tab-list"] {gap:6px;}
+.stTabs [data-baseweb="tab"] {background:#131A3A; border-radius:10px 10px 0 0; padding:8px 16px;}
+.stTabs [aria-selected="true"] {background:rgba(124,58,237,0.35)!important;}
+[data-testid="stSidebar"] div[role="radiogroup"] label {padding:7px 10px; border-radius:10px; width:100%;}
+[data-testid="stSidebar"] div[role="radiogroup"] label:hover {background:rgba(124,58,237,0.18);}
+.side-title {font-size:1.05rem; font-weight:800; color:#fff; line-height:1.25;} .side-sub {color:#9CA3C7; font-size:0.75rem; margin-bottom:8px;}
+</style>
+"""
+
+
+def inject_css() -> None:
+    st.markdown(CSS, unsafe_allow_html=True)
+
+
+def page_header(title: str, subtitle: str = "") -> None:
+    st.markdown(f"<div class='page-title'>{html.escape(title)}</div>"
+                f"<div class='page-sub'>{html.escape(subtitle)}</div>", unsafe_allow_html=True)
+
+
+def kpi_row(items: Sequence[Tuple[str, str, str]]) -> None:
+    """items = [(label, value, sub-text), ...]"""
+    cols = st.columns(len(items))
+    for col, (label, value, sub) in zip(cols, items):
+        col.markdown(
+            f"<div class='kpi-card'><div class='kpi-label'>{html.escape(str(label))}</div>"
+            f"<div class='kpi-value'>{html.escape(str(value))}</div>"
+            f"<div class='kpi-sub'>{html.escape(str(sub))}</div></div>", unsafe_allow_html=True)
+
+
+def card(title: str, body_html: str) -> str:
+    return f"<div class='card'><h4>{html.escape(title)}</h4>{body_html}</div>"
+
+
+def pill(text: str, kind: str = "info") -> str:
+    return f"<span class='pill pill-{kind}'>{html.escape(str(text))}</span>"
+
+
+def source_banner(meta: dict) -> None:
+    if meta.get("is_demo"):
+        st.markdown("<div class='banner banner-demo'>DEMO DATA - synthetic sample data generated by this project. "
+                    "Trends and numbers shown here are NOT real findings.</div>", unsafe_allow_html=True)
+    else:
+        st.markdown(f"<div class='banner banner-real'>REAL DATASET - {html.escape(str(meta.get('data_source', '')))} "
+                    f"&middot; {meta.get('rows', 0):,} postings analysed</div>", unsafe_allow_html=True)
+
+
+def style_fig(fig, height: int = 420, title: Optional[str] = None):
+    """Apply the navy/purple Plotly theme."""
+    fig.update_layout(
+        template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color=THEME["text"]), colorway=PURPLES, height=height,
+        margin=dict(l=10, r=10, t=50 if title else 20, b=10),
+        legend=dict(bgcolor="rgba(0,0,0,0)"))
+    if title:
+        fig.update_layout(title=dict(text=title, font=dict(size=15, color="#E9D5FF")))
+    fig.update_xaxes(gridcolor="rgba(167,139,250,0.12)", zerolinecolor="rgba(167,139,250,0.2)")
+    fig.update_yaxes(gridcolor="rgba(167,139,250,0.12)", zerolinecolor="rgba(167,139,250,0.2)")
+    return fig
+
+
+def show_fig(fig, key: str) -> None:
+    """st.plotly_chart that works on old and new Streamlit versions."""
+    try:
+        st.plotly_chart(fig, key=key, width="stretch")
+    except Exception:
+        st.plotly_chart(fig, key=key, use_container_width=True)
+
+
+def show_df(df: pd.DataFrame, key: Optional[str] = None, height: Optional[int] = None) -> None:
+    """st.dataframe that works on old and new Streamlit versions."""
+    kwargs = {"hide_index": True}
+    if height:
+        kwargs["height"] = height
+    if key:
+        kwargs["key"] = key
+    try:
+        st.dataframe(df, width="stretch", **kwargs)
+    except Exception:
+        st.dataframe(df, use_container_width=True, **kwargs)
+
+
+def _go(page: str) -> None:
+    st.session_state["page"] = page
+
+
+def goto_button(label: str, page: str, key: str) -> None:
+    st.button(label, key=key, on_click=_go, args=(page,))
+
+
+def no_data(kind_label: str) -> None:
+    st.warning(f"No processed results found for **{kind_label}** yet.")
+    st.markdown("Go to **Dataset & Upload** to analyse your CSV, or switch the sidebar to **Demo (synthetic)**.")
+    goto_button("Open Dataset & Upload", "Dataset & Upload", key="nodata_goto_upload")
+
+
+def error_box(context: str, exc: Exception) -> None:
+    st.error(f"Something went wrong while {context}: {exc}")
+    with st.expander("Technical details (for debugging)"):
+        st.code("".join(traceback.format_exception(type(exc), exc, exc.__traceback__))[-2500:])
+
+
+def evidence_pill(ev: str) -> str:
+    return pill(f"{ev} evidence", {"Strong": "good", "Moderate": "warn"}.get(ev, "bad"))

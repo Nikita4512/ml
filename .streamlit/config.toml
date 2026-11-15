@@ -1,0 +1,13 @@
+[theme]
+base = "dark"
+primaryColor = "#7C3AED"
+backgroundColor = "#0B1026"
+secondaryBackgroundColor = "#131A3A"
+textColor = "#E5E7EF"
+
+[server]
+maxUploadSize = 1000          # MB - the Kaggle CSV is ~166 MB
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false

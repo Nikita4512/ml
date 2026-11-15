@@ -1,0 +1,78 @@
+skill,category,postings,share
+Python,Programming Languages,1925,0.32605013550135503
+SQL,Programming Languages,1419,0.24034552845528456
+Git,Cloud & DevOps,1404,0.23780487804878048
+AWS,Cloud & DevOps,1125,0.19054878048780488
+Statistics,Data & Analytics,893,0.15125338753387535
+Kubernetes,Cloud & DevOps,891,0.15091463414634146
+Docker,Cloud & DevOps,844,0.1429539295392954
+Terraform,Cloud & DevOps,770,0.130420054200542
+Microservices,Web Backend & APIs,761,0.12889566395663957
+Data Warehousing,Data & Analytics,735,0.12449186991869919
+Machine Learning,Machine Learning & AI,716,0.12127371273712736
+Agile,Engineering Practices & Platforms,702,0.11890243902439024
+CSS,Web Frontend,699,0.11839430894308943
+HTML,Web Frontend,688,0.11653116531165311
+Data Visualization,Data & Analytics,655,0.11094173441734417
+Excel,Data & Analytics,640,0.10840108401084012
+CI/CD,Cloud & DevOps,630,0.10670731707317073
+Java,Programming Languages,605,0.10247289972899729
+Linux,Cloud & DevOps,602,0.10196476964769648
+jQuery,Legacy Technologies (watchlist),500,0.08468834688346884
+System Design,Engineering Practices & Platforms,495,0.08384146341463415
+MLOps,Machine Learning & AI,473,0.08011517615176152
+Cybersecurity,Cybersecurity,461,0.07808265582655827
+Android,Mobile,393,0.0665650406504065
+Network Security,Cybersecurity,391,0.06622628726287264
+Model Deployment,Machine Learning & AI,391,0.06622628726287264
+Networking,Cloud & DevOps,389,0.06588753387533876
+JavaScript,Programming Languages,388,0.06571815718157181
+Angular,Web Frontend,386,0.06537940379403794
+Selenium,Testing & Quality,383,0.06487127371273713
+TypeScript,Programming Languages,381,0.06453252032520325
+Unit Testing,Testing & Quality,377,0.0638550135501355
+Business Intelligence,Data & Analytics,376,0.06368563685636856
+Hadoop,Data & Analytics,376,0.06368563685636856
+Penetration Testing,Cybersecurity,375,0.06351626016260163
+Redux,Web Frontend,374,0.06334688346883469
+IAM,Cybersecurity,372,0.06300813008130081
+A/B Testing,Data & Analytics,370,0.06266937669376693
+React Native,Mobile,369,0.0625
+Power BI,Data & Analytics,368,0.06233062330623306
+REST APIs,Web Backend & APIs,368,0.06233062330623306
+Test Automation,Testing & Quality,368,0.06233062330623306
+JIRA,Engineering Practices & Platforms,367,0.06216124661246612
+Pandas,Data & Analytics,367,0.06216124661246612
+Airflow,Data & Analytics,364,0.061653116531165314
+Encryption,Cybersecurity,362,0.06131436314363144
+React,Web Frontend,361,0.0611449864498645
+Kotlin,Programming Languages,359,0.06080623306233062
+Data Structures & Algorithms,Engineering Practices & Platforms,359,0.06080623306233062
+Snowflake,Data & Analytics,356,0.06029810298102981
+SIEM,Cybersecurity,356,0.06029810298102981
+Ansible,Cloud & DevOps,352,0.05962059620596206
+Swift,Programming Languages,352,0.05962059620596206
+Bash/Shell,Programming Languages,350,0.05928184281842819
+NLP,Machine Learning & AI,350,0.05928184281842819
+PyTorch,Machine Learning & AI,350,0.05928184281842819
+Tableau,Data & Analytics,348,0.05894308943089431
+ETL,Data & Analytics,346,0.05860433604336043
+NumPy,Data & Analytics,344,0.058265582655826556
+Deep Learning,Machine Learning & AI,343,0.05809620596205962
+iOS,Mobile,343,0.05809620596205962
+TensorFlow,Machine Learning & AI,342,0.057926829268292686
+Generative AI,Machine Learning & AI,340,0.05758807588075881
+Jenkins,Cloud & DevOps,339,0.05741869918699187
+Spark,Data & Analytics,337,0.05707994579945799
+Kafka,Data & Analytics,335,0.05674119241192412
+scikit-learn,Machine Learning & AI,332,0.05623306233062331
+Flutter,Mobile,325,0.055047425474254744
+Prompt Engineering,Machine Learning & AI,274,0.046409214092140924
+LLMs,Machine Learning & AI,271,0.04590108401084011
+LangChain,Machine Learning & AI,267,0.04522357723577236
+Perl,Legacy Technologies (watchlist),257,0.04352981029810298
+SVN,Legacy Technologies (watchlist),256,0.04336043360433604
+RAG,Machine Learning & AI,187,0.03167344173441734
+Databricks,Data & Analytics,184,0.03116531165311653
+AngularJS,Legacy Technologies (watchlist),170,0.028794037940379404
+Mainframe,Legacy Technologies (watchlist),165,0.027947154471544715

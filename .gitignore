@@ -3,9 +3,17 @@ venv/
 .venv/
 env/
 
-# Python cache
+# Python cache & test artifacts
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# Large raw datasets (keep placeholder)
+data/raw/*.csv
+data/raw/*.zip
+data/processed/*.csv
+data/processed/*.npz
+data/processed/*.json
 
 # Node dependencies
 node_modules/

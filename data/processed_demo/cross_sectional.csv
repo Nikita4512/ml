@@ -1,0 +1,78 @@
+skill,junior_n,senior_n,log_ratio,signal,evidence
+Excel,405,168,1.1012439616204777,Emerging proxy (junior-leaning),Weak
+HTML,432,181,1.091385510524455,Emerging proxy (junior-leaning),Weak
+CSS,428,203,0.9676835710126114,Emerging proxy (junior-leaning),Weak
+Statistics,475,324,0.6051401836987268,Emerging proxy (junior-leaning),Weak
+SQL,672,596,0.3429817077954499,Emerging proxy (junior-leaning),Weak
+Git,651,610,0.2880579408715671,Balanced,Weak
+Mainframe,75,76,0.20990075327991548,Balanced,Weak
+Network Security,176,180,0.2006489364578423,Balanced,Weak
+Python,855,877,0.19766797584965376,Balanced,Weak
+SIEM,159,166,0.1801074506618271,Balanced,Weak
+NLP,151,162,0.15296646103705813,Balanced,Weak
+Power BI,158,170,0.15007813445119028,Balanced,Weak
+Selenium,164,179,0.1357942001345195,Balanced,Weak
+Penetration Testing,163,178,0.13528322697504072,Balanced,Weak
+Linux,262,287,0.13208705965169973,Balanced,Weak
+Cybersecurity,201,222,0.12392111763786928,Balanced,Weak
+PyTorch,152,168,0.12328768411247619,Balanced,Weak
+Data Structures & Algorithms,154,174,0.10132819255274479,Balanced,Weak
+Deep Learning,145,164,0.10032435426354726,Balanced,Weak
+Business Intelligence,158,179,0.09863822324642817,Balanced,Weak
+Tableau,147,167,0.0959036623721798,Balanced,Weak
+Prompt Engineering,112,128,0.09008315516662685,Balanced,Weak
+Docker,349,401,0.08435486614447515,Balanced,Weak
+Encryption,158,182,0.08206325815221556,Balanced,Weak
+IAM,159,184,0.07745329660174383,Balanced,Weak
+Kafka,139,163,0.06431044878153877,Balanced,Weak
+Jenkins,138,162,0.0632511617150276,Balanced,Weak
+Perl,109,128,0.06305448277870748,Balanced,Weak
+RAG,78,92,0.05894881812740984,Balanced,Weak
+Model Deployment,159,188,0.05600475319426028,Balanced,Weak
+jQuery,207,246,0.05082818404543473,Balanced,Weak
+Ansible,143,171,0.044810606451107675,Balanced,Weak
+Bash/Shell,142,171,0.03781757096013703,Balanced,Weak
+CI/CD,254,306,0.03714191847173785,Balanced,Weak
+LLMs,107,129,0.03686880428555156,Balanced,Weak
+Machine Learning,290,350,0.035301707674747725,Balanced,Weak
+Networking,158,193,0.023535918704925284,Balanced,Weak
+MLOps,190,235,0.011000118967709681,Balanced,Weak
+TensorFlow,134,166,0.009627727478821693,Balanced,Weak
+A/B Testing,146,183,-0.0021304011800765085,Balanced,Weak
+Java,240,303,-0.009602683096310481,Balanced,Weak
+Data Visualization,259,330,-0.018791118828371225,Balanced,Weak
+NumPy,138,176,-0.019391712888531788,Balanced,Weak
+Spark,133,170,-0.02157498102584084,Balanced,Weak
+Swift,140,180,-0.027464451141708673,Balanced,Weak
+Angular,151,195,-0.03191591661857014,Balanced,Weak
+Pandas,143,186,-0.03903736602676796,Balanced,Weak
+Redux,146,191,-0.0448035423061522,Balanced,Weak
+Flutter,128,168,-0.047948007599715514,Balanced,Weak
+SVN,101,133,-0.05098384150103567,Balanced,Weak
+ETL,135,180,-0.0637002995957536,Balanced,Weak
+Snowflake,135,181,-0.06922517552772348,Balanced,Weak
+TypeScript,145,195,-0.07232545495644667,Balanced,Weak
+AWS,425,578,-0.08411476076287606,Balanced,Weak
+REST APIs,137,188,-0.0924152519240129,Balanced,Weak
+Test Automation,142,195,-0.09315954185928874,Balanced,Weak
+Generative AI,127,175,-0.09646384045001312,Balanced,Weak
+Android,149,206,-0.09994518171291987,Balanced,Weak
+Airflow,135,190,-0.11762171638957372,Balanced,Weak
+AngularJS,65,92,-0.12209966401974663,Balanced,Weak
+Unit Testing,140,199,-0.12754790969869118,Balanced,Weak
+Kotlin,132,190,-0.14001071128305237,Balanced,Weak
+React,133,192,-0.1429358380301081,Balanced,Weak
+Hadoop,138,200,-0.14688508326180402,Balanced,Weak
+React Native,136,198,-0.15140564764480413,Balanced,Weak
+LangChain,96,140,-0.1526056425714337,Balanced,Weak
+JavaScript,135,203,-0.18363552670546757,Balanced,Weak
+JIRA,131,200,-0.198748557271378,Balanced,Weak
+iOS,118,190,-0.2516803961341433,Balanced,Weak
+scikit-learn,110,181,-0.2731812948896714,Balanced,Weak
+Databricks,59,101,-0.31102364807283145,Established/legacy-risk proxy (senior-leaning),Weak
+Kubernetes,206,592,-0.8309916227507723,Established/legacy-risk proxy (senior-leaning),Weak
+Data Warehousing,141,521,-1.0813507195001084,Established/legacy-risk proxy (senior-leaning),Weak
+Microservices,138,535,-1.1292717264029837,Established/legacy-risk proxy (senior-leaning),Weak
+Agile,128,504,-1.1445800976009626,Established/legacy-risk proxy (senior-leaning),Weak
+Terraform,137,544,-1.1531851874089627,Established/legacy-risk proxy (senior-leaning),Weak
+System Design,38,410,-2.143658849741318,Established/legacy-risk proxy (senior-leaning),Weak

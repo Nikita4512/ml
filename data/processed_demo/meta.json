@@ -1,0 +1,111 @@
+{
+  "data_source": "DEMO (synthetic sample data)",
+  "source_kind": "demo",
+  "is_demo": true,
+  "rows": 5904,
+  "unique_skills_found": 77,
+  "postings_with_any_skill_pct": 84.1,
+  "date_min": "2024-01-01",
+  "date_max": "2024-12-31",
+  "analysis_mode": "A",
+  "temporal": {
+    "mode": "A",
+    "freq": "M",
+    "evidence_cap": "Strong",
+    "n_valid_dates": 5904,
+    "reasons": [
+      "12 months have >= 200 postings: monthly trends are possible."
+    ],
+    "date_min": "2024-01-01",
+    "date_max": "2024-12-31",
+    "span_days": 365,
+    "qualifying_months": 12,
+    "qualifying_weeks": 0
+  },
+  "columns_detected": {
+    "job_id": "job_id",
+    "title": "title",
+    "description": "description",
+    "skills_desc": "skills_desc",
+    "company": "company_name",
+    "location": "location",
+    "experience_level": "formatted_experience_level",
+    "work_type": "formatted_work_type",
+    "listed_time": "listed_time",
+    "normalized_salary": "normalized_salary",
+    "pay_period": "pay_period"
+  },
+  "clean_report": {
+    "rows_in": 6060,
+    "dropped_no_text": 0,
+    "dropped_duplicate_job_id": 60,
+    "dropped_duplicate_content": 96,
+    "rows_out": 5904,
+    "pct_with_description": 100.0,
+    "pct_with_valid_date": 100.0,
+    "pct_with_salary": 44.8,
+    "level_counts": {
+      "senior": 2950,
+      "junior": 2360,
+      "unknown": 594
+    }
+  },
+  "load_info": {
+    "rows_read": 6060,
+    "columns_in_file": [
+      "job_id",
+      "company_name",
+      "title",
+      "description",
+      "location",
+      "formatted_experience_level",
+      "formatted_work_type",
+      "listed_time",
+      "normalized_salary",
+      "skills_desc",
+      "pay_period",
+      "demo_data_flag"
+    ],
+    "columns_used": [
+      "job_id",
+      "company_name",
+      "title",
+      "description",
+      "location",
+      "formatted_experience_level",
+      "formatted_work_type",
+      "listed_time",
+      "normalized_salary",
+      "skills_desc",
+      "pay_period"
+    ]
+  },
+  "seniority_note": "junior postings=2360, senior postings=2950",
+  "salary_premium_note": "2647 postings with salary",
+  "backtest": {
+    "status": "ok",
+    "holdout_periods": 2,
+    "n_skills": 77,
+    "mae_pct_points": {
+      "linear_trend": 1.1336258528951302,
+      "naive_last_value": 1.4091017246246338,
+      "mean_last_3": 1.1075019836425781
+    },
+    "linear_beats_naive": true
+  },
+  "n_roles_profiled": 10,
+  "role_counts": {
+    "Frontend / Full-Stack Developer": 515,
+    "Data Analyst / BI": 513,
+    "QA / Test Engineer": 511,
+    "Mobile Developer": 502,
+    "Cybersecurity Specialist": 502,
+    "Data Scientist": 495,
+    "Machine Learning / AI Engineer": 490,
+    "Data Engineer": 484,
+    "Software Engineer (General/Backend)": 479,
+    "DevOps / Cloud Engineer": 472
+  },
+  "processed_at": "2026-11-15T11:52:37",
+  "runtime_seconds": 9.6
+}
