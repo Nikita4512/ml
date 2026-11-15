@@ -1,0 +1,21 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+
+# IDE files
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
